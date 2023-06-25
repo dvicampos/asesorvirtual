@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="../static/gifs/chatbotAnimated.gif" />
+</head>
+
+<body>
+  <div class="cabecera">
+    <div class="imagen">
+      <img src="../static/gifs/chatbotAnimated.gif" width="100px">
+    </div>
+    <div class="usuario">
+      <p>AsAD</p>
+      <p id="estado">En linea</p>
+    </div>
+  </div>
+
+  <div class="centrar">
+      <div class="gift">
+        <p class="saludo separar">Hola soy AsAD ¿Como te llamas?</p>
+      </div>
+      <div class="barram">
+        <input class="entrada" id="userinput" type="text" name="msg">
+        <button id="btn-enviar" class="enviar" onclick="send()">Enviar</button>
+      </div>
+    <div id="chatbox"></div>
+    <button id="mi-boton" onclick="send_message('Comenzar')" class="custom-btn btn-16" style="display: none;">Comenzar</button>
+    <p class="separar" id="mi-mensaje" style="display: none;">¿Qué necesitas saber?</p>
+      <div id="chat" class="comentarios"></div>
+  </div>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

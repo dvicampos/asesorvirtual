@@ -1,0 +1,247 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  color: #330092;
+  background-color: #f0f0f0;
+}
+body {
+  overflow-y: auto;
+}
+
+.saludo{
+  margin-bottom: 15px;
+  font-family: 'Lobster', cursive;
+  font-size: 50px;
+  color: #03093a;
+}
+.enviar{
+  width: 200px;
+  padding: 10px;
+  background-color: #03093a;
+  color: #f0f0f0;
+  border-color: #09f1e6;
+}
+.enviar:hover{
+  background-color: #f0f0f0;
+  color: #03093a;
+  cursor: pointer;
+}
+
+.entrada{
+  width: 500px;
+  padding: 10px;
+  margin-left: 20px;
+  border-color: #03093a;
+  border-radius: 5px;
+}
+
+/* GLOBO 1 */
+.comentarios{
+  width: 400px;
+}
+
+.comentarios .comentario{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.comentarios .comentario p{
+  margin: 0 0 10px 0;
+}
+
+.burbuja{
+  position: relative;
+  background-color: #610707;
+  padding: 20px;
+  color: #ffffff;
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+.burbuja:after{
+  content: "";
+  display: block;
+  position: absolute;
+
+  top: 15px;
+  margin-left: -35px;
+
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+
+  border-right: 15px solid #2e0202;
+}
+/* GLOBO 2 */
+.comentarios {
+  width: 400px;
+  float: left;
+}
+
+.comentarios .comentarior {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-left: 230%;
+}
+
+.comentarios .comentarior p {
+  margin: 0 0 10px 0;
+}
+
+.burbujar {
+  position: relative;
+  background-color: #03093a;
+  padding: 20px;
+  color: #ffffff;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.burbujar:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 15px solid #03093a;
+}
+
+
+/*
+Botones
+*/
+button {
+  margin: 20px;
+  overflow: visible;
+  border-color: #f12409;
+
+}
+
+.custom-btn {
+  width: auto;
+  height: 40px;
+  color: #09f1e6;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+    7px 7px 20px 0px rgba(0, 0, 0, .1),
+    4px 4px 5px 0px rgba(0, 0, 0, .1);
+  outline: none;
+}
+
+/* 16 */
+.btn-16 {
+  border: none;
+  color: #000;
+}
+
+.btn-16:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  direction: rtl;
+  z-index: -1;
+  box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+  transition: all 0.3s ease;
+}
+
+.btn-16:hover {
+  color: #000;
+}
+
+.btn-16:hover:after {
+  left: auto;
+  right: 0;
+  width: 100%;
+}
+
+.btn-16:active {
+  top: 2px;
+}
+
+/*
+Centrar chat
+*/
+.centrar {
+  padding-top: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* background: rgb(71, 10, 10); */
+  text-align: center;
+}
+
+
+.cabecera{
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  width: 100%;
+  background-color: rgb(1, 1, 20);
+  padding: 10px;
+}
+.cabecera .imagen{
+  background-color: rgb(68, 65, 65);
+  border-radius: 50%;
+}
+.cabecera .usuario{
+  /* background-color: rgb(7, 63, 19); */
+  color: #f0f0f0;
+  width: auto;
+  padding-top: 35px;
+  padding-left: 20px;
+}
+.cabecera .usuario p{
+  margin-bottom: 5px;
+}
+
+.barram {
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(1, 1, 20);
+  color: #fff;
+  padding: 10px;
+}
+
+.entrada {
+  margin-right: 10px;
+}
+.separar{
+  margin: 25px;
+}
+
+#mi-mensaje{
+  width: 96%;
+  padding: 10px;
+  background-color: #03093a;
+  color: #f0f0f0;
+}
