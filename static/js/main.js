@@ -13,13 +13,17 @@
 //     }
 //   });
 // }
+
+
 function send_message(message) {
   $.ajax({
     type: "POST",
     url: "/message",
     data: { message: message },
     success: function(response) {
-      $("#chat").html("<div>" + response + "</div>"); // Replace existing content with the response
+      $("#chat").html("<div>" + response + "</div>");
+      // $("#chat").append("<div>" + response + "</div>");
+      // $("#chat").append("<div>" + textOnly + "</div>");
       if (message === 'salir') {
         $("#estado").text('Salio del chat');
       }
@@ -27,6 +31,26 @@ function send_message(message) {
     }
   });
 }
+
+// function send_message(message) {
+//   $.ajax({
+//     type: "POST",
+//     url: "/message",
+//     data: { message: message },
+//     success: function(response) {
+//       // Filtrar y mostrar solo los textos de la respuesta
+//       var textOnly = $(response).text();
+//       $("#chat").append("<div>" + textOnly + "</div>");
+      
+//       if (message === 'salir') {
+//         $("#estado").text('Salio del chat');
+//       }
+//       setTimeout(scrollToBottom, 10);
+//     }
+//   });
+// }
+
+
 
 function scrollToBottom() {
   window.scrollTo({
@@ -50,7 +74,7 @@ function send() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("chatbox").innerHTML +=
-        "<p class='comentario burbuja'><strong>AsAD :</strong> " + this.responseText + "</p>";
+        "<p class='comentarior burbujar'>Hola mi nombre es " + this.responseText + "</p>" + "<p class='comentarios burbuja'>Hola " + this.responseText + " bienvenido <br> Permíteme ayudarte con el tema de la célula y sus componentes</p>";
     }
   };
   xhttp.open("GET", "/get?msg=" + userinput, true);
@@ -64,4 +88,19 @@ function send() {
 
   var msje = document.getElementById("mi-mensaje");
   msje.style.display = "block";
+
+}
+
+function ejecutar(){
+  
+  var userInput = document.getElementById("userinput").value.trim();
+  var div = document.getElementById('inicio');
+  var text = 'Ingrese un nombre por favor';
+    if (userInput === "") {
+      div.innerHTML = '<p class="separar comentario burbuja">' + text + '</p>';
+      return;
+    }else{
+      send_message('Comenzar');
+      send();
+    }
 }

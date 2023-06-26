@@ -11,12 +11,12 @@ body {
   overflow-y: auto;
 }
 
-.saludo{
+/* .saludo{
   margin-bottom: 15px;
   font-family: 'Lobster', cursive;
   font-size: 50px;
   color: #03093a;
-}
+} */
 .enviar{
   width: 200px;
   padding: 10px;
@@ -46,6 +46,7 @@ body {
 .comentarios .comentario{
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .comentarios .comentario p{
@@ -85,6 +86,7 @@ body {
 .comentarios .comentarior {
   width: 100%;
   margin-bottom: 20px;
+  margin-top: 20px;
   margin-left: 230%;
 }
 
@@ -100,6 +102,7 @@ body {
   border-radius: 3px;
   margin-left: auto;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .burbujar:after {
@@ -236,7 +239,7 @@ Centrar chat
   margin-right: 10px;
 }
 .separar{
-  margin: 25px;
+  margin-top: 45px;
 }
 
 #mi-mensaje{

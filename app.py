@@ -1,12 +1,14 @@
-from flask import Flask, request, Markup, render_template
+from flask import Flask, request, Markup, render_template, json
 
 app = Flask(__name__)
 global usuario
+
 @app.route("/get")
 def get_bot_response():
     user_text = request.args.get('msg')
     usuario = user_text
-    return "Hola: " + user_text + " bienvenido " + "<br>" + "Permíteme ayudarte con el tema de la célula y sus componentes"
+    return user_text
+    # return "Hola: " + user_text + " bienvenido " + "<br>" + "Permíteme ayudarte con el tema de la célula y sus componentes"
 
 
 @app.route('/') 
@@ -105,7 +107,7 @@ opelimidese = [
 def message():
     message = request.form['message']
     buttons = [buttons1]
-
+    
     message_map = {
         'Comenzar': buttons,
         'Concepto': [
@@ -119,7 +121,7 @@ def message():
             regresar
         ],
         'funcioncel': [
-            f"<p class='comentarior burbujar'>mas sobre la celula respuesta (video)</p>",
+            f"<p class='comentarior burbujar'>Mas sobre la celula respuesta (video)</p>",
             f'<p class="comentario burbuja"> <iframe width="300" height="250" src="https://www.youtube.com/embed/aoj9oTvVJ8o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </p>',
             regresar
         ],
@@ -172,7 +174,7 @@ def message():
             regresar
         ],
         'infor':[
-            f"<p class='comentarior burbujar'>mas informacion del organulos respuesta</p>",
+            f"<p class='comentarior burbujar'>Mas informacion del organulos respuesta (video)</p>",
             f'<p class="comentario burbuja"> <iframe width="300" height="250" src="https://www.youtube.com/embed/dslZxeP8qQE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </p>',
             componentesop, opcito,
             regresar
@@ -243,7 +245,7 @@ def message():
             regresar
         ],
         'vidcelp': [
-            f"<p class='comentarior burbujar'>Video de la celula procariota tema respuesta</p>",
+            f"<p class='comentarior burbujar'>Celula procariota tema respuesta (video)</p>",
             f'<p class="comentario burbuja"><iframe width="300" height="250" src="https://www.youtube.com/embed/vhHlWwFZakM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>',
             masnucleo,
             regresar
@@ -332,15 +334,17 @@ def message():
         ],
         #SALIR
         'salir': [
-            f"<p id='estado' class='comentario burbuja'>Hasta luego</p>"
+            f"<p id='estado' class='comentarior burbujar'>Hasta luego</p>",
+            f"<p id='estado' class='comentario burbuja'>Nos vemos, buen dia</p>"
+
         ],
         'regresar': buttons
     }
     
     return message_map.get(message, "Lo siento, no entendí tu mensaje.")
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)
 
 #SET FLASK_APP=app.py
 #python app.py

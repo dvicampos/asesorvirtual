@@ -22,19 +22,18 @@
   </div>
 
   <div class="centrar">
-      <div class="gift">
-        <p class="saludo separar">Hola soy AsAD ¿Como te llamas?</p>
+      <div id="inicio" class="gift">
+        <p class="separar comentarios burbuja">Hola soy AsAD ¿Como te llamas?</p>
       </div>
       <div class="barram">
         <input class="entrada" id="userinput" type="text" name="msg">
-        <button id="btn-enviar" class="enviar" onclick="send()">Enviar</button>
+        <button id="btn-enviar" class="enviar" onclick="ejecutar()">Enviar</button>
       </div>
-    <div id="chatbox"></div>
-    <button id="mi-boton" onclick="send_message('Comenzar')" class="custom-btn btn-16" style="display: none;">Comenzar</button>
-    <p class="separar" id="mi-mensaje" style="display: none;">¿Qué necesitas saber?</p>
-      <div id="chat" class="comentarios"></div>
+    <div id="chatbox" class="centrar">
+    </div>
+      <div id="chat" class="comentarios">
+      </div>
   </div>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
-
 </html>
