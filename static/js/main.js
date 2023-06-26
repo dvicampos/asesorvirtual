@@ -48,17 +48,22 @@ function send() {
   msje.style.display = "block";
 
 }
+function recarga(){
+  window.location.reload()
+}
 
-function ejecutar(){
-  
+function ejecutar() {
   var userInput = document.getElementById("userinput").value.trim();
   var div = document.getElementById('inicio');
   var text = 'Ingrese un nombre por favor';
-    if (userInput === "") {
-      div.innerHTML = '<p class="separar comentario burbuja">' + text + '</p>';
-      return;
-    }else{
-      send_message('Comenzar');
-      send();
-    }
+  
+  if (userInput !== "") {
+    send_message('Comenzar');
+    send();
+  } else {
+    div.innerHTML = '<p class="separar comentarios burbuja">' + text + '</p>';
+    setTimeout(recarga, 1000);
+    const nombreInput = document.getElementById('userinput');
+    nombreInput.focus();
+  }
 }
