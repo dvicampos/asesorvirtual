@@ -336,11 +336,9 @@ def message():
         'salir': [
             f"<p id='estado' class='comentarior burbujar'>Hasta luego</p>",
             f"<p id='estado' class='comentario burbuja'>Nos vemos, buen dia</p>"
-
         ],
         'regresar': buttons
-    }
-    
+    }   
     return message_map.get(message, "Lo siento, no entendí tu mensaje.")
 
 if __name__ == '__main__':

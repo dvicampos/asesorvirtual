@@ -1,29 +1,13 @@
 //FUNCION PARA EL TEXTO
-// function send_message(message) {
-//   $.ajax({
-//     type: "POST",
-//     url: "/message",
-//     data: { message: message },
-//     success: function(response) {
-//       $("#chat").append("<div>" + response + "</div>");
-//       if (message === 'salir') {
-//         $("#estado").text('Salio del chat');
-//       }
-//       setTimeout(scrollToBottom, 10);
-//     }
-//   });
-// }
-
-
 function send_message(message) {
   $.ajax({
     type: "POST",
     url: "/message",
     data: { message: message },
     success: function(response) {
-      $("#chat").html("<div>" + response + "</div>");
-      // $("#chat").append("<div>" + response + "</div>");
-      // $("#chat").append("<div>" + textOnly + "</div>");
+      // $("#chat").html("<div>" + response + "</div>");
+      $("#chat").append("<div>"+ response +"</div>");
+      console.log("holaaa")
       if (message === 'salir') {
         $("#estado").text('Salio del chat');
       }
@@ -31,25 +15,6 @@ function send_message(message) {
     }
   });
 }
-
-// function send_message(message) {
-//   $.ajax({
-//     type: "POST",
-//     url: "/message",
-//     data: { message: message },
-//     success: function(response) {
-//       // Filtrar y mostrar solo los textos de la respuesta
-//       var textOnly = $(response).text();
-//       $("#chat").append("<div>" + textOnly + "</div>");
-      
-//       if (message === 'salir') {
-//         $("#estado").text('Salio del chat');
-//       }
-//       setTimeout(scrollToBottom, 10);
-//     }
-//   });
-// }
-
 
 
 function scrollToBottom() {
@@ -59,10 +24,6 @@ function scrollToBottom() {
   });
 }
 
-const button = document.querySelector("#mi-boton");
-button.addEventListener("click", () => {
-  button.style.display = "none";
-});
 const btnenvi = document.querySelector("#btn-enviar");
 btnenvi.addEventListener("click", () => {
   btnenvi.style.display = "none";
@@ -82,9 +43,6 @@ function send() {
   document.getElementById("userinput").value = "";
   var caja = document.querySelector(".barram");
   caja.style.display = "none";
-
-  var boton = document.getElementById("mi-boton");
-  boton.style.display = "block";
 
   var msje = document.getElementById("mi-mensaje");
   msje.style.display = "block";
