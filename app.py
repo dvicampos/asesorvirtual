@@ -1,4 +1,6 @@
-from flask import Flask, request, Markup, render_template, json
+from flask import Flask, request, render_template, json
+# from flask import Flask, request, Markup, render_template, json
+from markupsafe import Markup, escape
 
 app = Flask(__name__)
 global usuario
