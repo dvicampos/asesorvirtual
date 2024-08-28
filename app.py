@@ -343,8 +343,9 @@ def message():
     }   
     return message_map.get(message, "Lo siento, no entendí tu mensaje.")
 
-#if __name__ == '__main__':
-    #app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000, debug=True)
+    # app.run(debug=True)
 
 #SET FLASK_APP=app.py
 #python app.py
